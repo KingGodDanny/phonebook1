@@ -6,10 +6,16 @@
 <%@page import="com.javaex.vo.PersonVo" %>
 
 <%	
+	request.setCharacterEncoding("UTF-8");
+
+	PhoneDao phoneDao = new PhoneDao();
+
+	
 	/* 주소창에 쓰는 양식임!!!
 	http://localhost:8088/phonebook1/
 	insert.jsp?name=유재석&hp=010-2222-2222&company=02-2222-2222
 	*/
+	//파라미터에서 꺼내기
 	String name =request.getParameter("name");
 	String hp =request.getParameter("hp");
 	String company =request.getParameter("company");
@@ -23,19 +29,24 @@
 	
 	
 	//저장하기
-	PhoneDao phoneDao = new PhoneDao();
 	phoneDao.personInsert(personVo);
 	
 	
-	//리스트가져오기
-	List<PersonVo> personList = phoneDao.getPersonList();
+// 	//리스트가져오기
+// 	List<PersonVo> personList = phoneDao.getPersonList();
 	
 	
-	//콘솔창에 출력
-	System.out.println(personList.toString());
+// 	//콘솔창에 출력
+// 	System.out.println(personList.toString());
+
+	//리다이렉트 - 두번 돌아서 리스트.jsp를 보여주는것
+	response.sendRedirect("./list.jsp");
+	
 %>
     
-    
+<%--
+리다이렉트
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,3 +85,4 @@
 	
 </body>
 </html>
+ --%>

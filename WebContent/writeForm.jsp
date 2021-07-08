@@ -34,7 +34,7 @@
 	</form>
 	
 	<br>
-	<a href="http://localhost:8088/phonebook1/list.jsp">추가번호 등록</a>
+	<a href="http://localhost:8088/phonebook1/list.jsp">리스트 바로가기</a>
 	
 </body>
 </html>
