@@ -7,7 +7,7 @@
 <%
 	PhoneDao phoneDao = new PhoneDao();
 	//id추출
-	String id =request.getParameter("id");
+	String id = request.getParameter("id");
 	int personId = Integer.parseInt(id);
 	System.out.println(personId);
 	
